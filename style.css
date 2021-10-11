@@ -1,0 +1,216 @@
+@import url('https://fonts.googleapis.com/css2?family=Muli&display=swap');
+:root {
+	--progress-color: rgb(223, 223, 223);
+	--progress-active-color: rgb(0, 132, 255);
+	--background-color: rgb(255, 250, 244);
+	--greenyellow: greenyellow;
+	--dark-green: rgb(29, 41, 37);
+}
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	padding: 30px;
+	font-family: 'Muli', sans-serif;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	background-color: var(--dark-green);
+	height: 100vh;
+	overflow: hidden;
+}
+.container {
+	text-align: center;
+}
+.progress-container {
+	display: flex;
+	justify-content: space-between;
+	position: relative;
+	margin-bottom: 30px;
+	max-width: 100%;
+	width: 350px;
+	/* background-color: violet; */
+}
+.progress-container::before {
+	content: '';
+	position: absolute;
+	top: 50%;
+	left: 0;
+	transform: translateY(-50%);
+	height: 4px;
+	width: 100%;
+	z-index: -1;
+	background-color: var(--progress-color);
+}
+.progress {
+	position: absolute;
+	top: 43%;
+	left: 0;
+	height: 4px;
+	width: 0%;
+	z-index: -1;
+	transition: 0.4s ease;
+	background-color: rgb(51, 73, 18);
+	border-top: 0.4px solid var(--greenyellow);
+	border-bottom: 0.4px solid var(--greenyellow);
+}
+.circle {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: white;
+	border-radius: 50%;
+	width: 30px;
+	height: 30px;
+	border: 3px solid var(--progress-color);
+}
+.circle.active {
+	background-color: var(--background-color);
+	border: 3px solid rgb(51, 73, 18);
+	box-shadow: 0 0 15px var(--greenyellow);
+}
+.btn {
+	border: none;
+	outline: none;
+	margin: 10px;
+	background-color: var(--progress-active-color);
+	padding: 8px 30px;
+	border-radius: 6px;
+	font-size: 20px;
+	color: var(--greenyellow);
+	background-color: rgb(38, 61, 2);
+	font-family: inherit;
+	cursor: pointer;
+}
+.btn:active {
+	transform: scale(0.98);
+}
+.btn:disabled {
+	background-color: var(--progress-color);
+	cursor: not-allowed;
+	background-color: rgb(38, 61, 2);
+	color: rgb(61, 102, 3);
+}
+/**---------------------------Visa application1----------------------**/
+.main {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+	width: 60%;
+	height: 80vh;
+	margin: 30px;
+	/* background-color: turquoise; */
+}
+.hidden {
+	display: none;
+	visibility: hidden;
+}
+.application_1 {
+	position: absolute;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	width: 50%;
+	height: 70%;
+	background-color: var(--dark-green);
+	border-radius: 10px;
+	box-shadow: 0 0 15px var(--greenyellow);
+}
+.application_1 h1 {
+	color: var(--dark-green);
+	font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+	text-shadow: 0 1.5px 4px var(--greenyellow);
+	margin-top: -20px;
+	font-size: 2.5rem;
+}
+.application_1 span {
+	color: rgb(146, 223, 30);
+	text-shadow: 0 0 0;
+}
+.application_1 p {
+	color: var(--greenyellow);
+	margin: -10px 0 30px;
+}
+.app1_input {
+	width: 80%;
+	height: 40px;
+	margin: 7px;
+	font-size: 1.1rem;
+	padding-left: 10px;
+	border: none;
+	outline: none;
+	border-radius: 10px;
+	color: rgb(33, 53, 6);
+}
+
+/**---------------------------Visa application2----------------------**/
+.visa_application {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	box-shadow: 0 0 10px var(--greenyellow);
+	border-radius: 10px;
+	padding: 10px;
+}
+.nav {
+	display: flex;
+	align-items: center;
+	width: 100%;
+	height: 50px;
+	background-color: var(--dark-green);
+	border-bottom: 1px solid var(--greenyellow);
+}
+.nav h1 {
+	color: var(--greenyellow);
+	font-size: 1.5rem;
+}
+.fa-user {
+	margin: 2px 10px;
+	background-color: var(--dark-green);
+	color: white;
+	border-radius: 50%;
+	border: 2px solid var(--greenyellow);
+	padding: 10px;
+	font-size: 1rem;
+}
+.surovnoma1 {
+	position: relative;
+	width: 100%;
+	height: 90%;
+	padding: 20px;
+	padding-top: 30px;
+	display: inline-block;
+	background-color: var(--dark-green);
+}
+.app2_input {
+	width: 30%;
+	height: 35px;
+	margin: 13px;
+	margin-top: 40px;
+	outline: none;
+	border: 1px solid var(--greenyellow);
+}
+.app2_span {
+	color: var(--greenyellow);
+	position: absolute;
+	margin-left: 15px;
+	margin-top: 12px;
+	font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.tabrik h1 {
+	margin-left: 20%;
+	position: absolute;
+	top: 40%;
+	width: 100%;
+	height: 50px;
+	color: var(--greenyellow);
+	/* background-color: var(--dark-green); */
+	/* border-bottom: 1px solid var(--greenyellow); */
+}
